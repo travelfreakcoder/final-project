@@ -14,6 +14,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Loader from "../ui/Loader";
 
 const Shop = () => {
   const [input, setInput] = useState("");
@@ -102,11 +103,11 @@ const Shop = () => {
   };
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1><Loader/></h1>;
   }
 
   if (isFetching) {
-    return <h1>Fetching...</h1>;
+    return <h1><Loader/></h1>;
   }
 
   if (error) {

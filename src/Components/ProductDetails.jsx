@@ -3,6 +3,7 @@ import { useFetchSingleProductQuery } from "../react-query/product-query";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../react-redux/cartSlice";
+import Loader from "../ui/Loader";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -25,11 +26,11 @@ const ProductDetails = () => {
   }
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1><Loader/></h1>;
   }
 
   if (isFetching) {
-    return <h1>Fetching...</h1>;
+    return <h1><Loader/></h1>;
   }
 
   if (error) {
