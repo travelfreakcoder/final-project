@@ -308,16 +308,15 @@ const Shop = () => {
                         Sort By-
                       </InputLabel>
                       <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={
-                          sortType === "price"
-                            ? sortOrder.price
-                            : sortOrder.title
-                        }
-                        onChange={handleSortClick}
-                        label="Sort By: "
-                      >
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={
+                      sortOrder.price !== "default"
+                        ? sortOrder.price
+                        : sortOrder.title !== "default"
+                        ? `title-${sortOrder.title}`
+                        : "default"
+                    }
                         <MenuItem value={"default"}>
                           <span style={{ color: "grey" }}>View All</span>
                         </MenuItem>
